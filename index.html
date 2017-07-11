@@ -2,14 +2,50 @@
 <html lang="en">
 
 <head>
-  <title></title>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="css/style.css" rel="stylesheet">
-  <link rel="stylesheet" href="javascripts/bootstrap/3.3.7/css/bootstrap.min.css">
+	<title></title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="css/style.css" rel="stylesheet">
+	<link rel="stylesheet" href="javascripts/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="javascripts/bootswatch/3.3.7/css/bootstrap.min.css">
 </head>
 
 <body>
+
+	<div id="app" class="container">
+
+		<div class="page-header">
+			<h1>RoomVr <small>Subtext for header</small></h1>
+		</div>
+
+		<div class="row">
+			<div class="col-lg-3">
+				<ul class="list-group">
+					<li class="list-group-item">
+						<input type="radio" value="1" name="video" checked @click="selectedVideo"> video A
+					</li>
+					<li class="list-group-item">
+						<input type="radio" value="2" name="video" @click="selectedVideo"> video B
+					</li>
+					<li class="list-group-item">
+						<input type="radio" value="3" name="video" @click="selectedVideo"> video C
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="container">
+			<h2>
+				<button @click="execVideo" type="button" style="margin-right: 10px">
+					<i class="glyphicon glyphicon-play" ></i>
+				</button>
+				<button type="button">
+					<i class="glyphicon glyphicon-stop"></i>
+				</button>
+			</h2>
+		</div>
+
+	</div>
 
 </body>
 
