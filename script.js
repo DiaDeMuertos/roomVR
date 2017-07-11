@@ -8,18 +8,17 @@ $(document).ready(function () {
     el: '#app',
     data: data,
     methods: {
-      ejecutar: function () {
+      execVideo: function () {
         var currentVideo = this.currentVideo;
 
-        $.get("http://localhost:3000/send/test", function (response) {
-          var message = `Ejecutando ${currentVideo}`;
-          console.log(message);
+        $.get(`http://localhost:3000/send/${currentVideo}`, function (response) {
+          console.log(`Ejecutando video ${currentVideo}`);
         });
       },
-      selectedRB: function (event) {
+      selectedVideo: function (event) {
         this.currentVideo = event.target.value;
+        console.log(`Selecionado video ${this.currentVideo}`);
       }
     },
   });
-
 });

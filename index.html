@@ -22,10 +22,13 @@
 			<div class="col-lg-3">
 				<ul class="list-group">
 					<li class="list-group-item">
-						<input type="radio" value="video A" name="video" checked @click="selectedRB"> video A
+						<input type="radio" value="1" name="video" checked @click="selectedVideo"> video A
 					</li>
 					<li class="list-group-item">
-						<input type="radio" value="video B" name="video" @click="selectedRB"> video B
+						<input type="radio" value="2" name="video" @click="selectedVideo"> video B
+					</li>
+					<li class="list-group-item">
+						<input type="radio" value="3" name="video" @click="selectedVideo"> video C
 					</li>
 				</ul>
 			</div>
@@ -33,12 +36,12 @@
 
 		<div class="container">
 			<h2>
-				<button @click="ejecutar" type="button" style="margin-right: 10px">
-        <i class="glyphicon glyphicon-play" ></i>
-      </button>
+				<button @click="execVideo" type="button" style="margin-right: 10px">
+					<i class="glyphicon glyphicon-play" ></i>
+				</button>
 				<button type="button">
-        <i class="glyphicon glyphicon-stop"></i>
-      </button>
+					<i class="glyphicon glyphicon-stop"></i>
+				</button>
 			</h2>
 		</div>
 
