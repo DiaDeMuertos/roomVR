@@ -1,7 +1,7 @@
 $(document).ready(function () {
 
   var data = {
-    currentVideo : 'video A',
+    currentVideo : '1',
   };
 
   new Vue({
