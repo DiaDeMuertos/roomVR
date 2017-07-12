@@ -1,7 +1,18 @@
 $(document).ready(function () {
 
   var data = {
-    currentVideo : '1',
+    videos: [
+      {
+        name: 'video A'
+      },
+      {
+        name: 'video B'
+      },
+      {
+        name: 'video C'
+      },
+    ],
+    currentVideo: '1',
   };
 
   new Vue({
