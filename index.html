@@ -20,11 +20,11 @@
 
 		<div class="row">
 			<div class="col-lg-3">
-				<ul class="list-group">
+				 <ul class="list-group">
 					<li class="list-group-item" name="video" v-for="(video, index) in videos">
-						<input type="radio" v-bind:value=index+1 v-bind:checked="currentVideo==index+1" @click="selectedVideo"> {{ video.name }}
+						<input type="radio" v-bind:value=video.fileName v-bind:checked="currentVideo==video.fileName" @click="selectedVideo"> {{ video.textName }}
 					</li>
-				</ul>
+				</ul> 
 			</div>
 		</div>
 

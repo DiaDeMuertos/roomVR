@@ -3,16 +3,19 @@ $(document).ready(function () {
   var data = {
     videos: [
       {
-        name: 'video A'
+        textName: 'video A',
+        fileName: 'videoA.mpg4',
       },
       {
-        name: 'video B'
+        textName: 'video B',
+        fileName: 'videoB.mpg4'
       },
       {
-        name: 'video C'
+        textName: 'video C',
+        fileName: 'videoC.mpg4'
       },
     ],
-    currentVideo: '1',
+    currentVideo: 'videoA.mpg4',
   };
 
   new Vue({
