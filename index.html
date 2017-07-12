@@ -21,14 +21,8 @@
 		<div class="row">
 			<div class="col-lg-3">
 				<ul class="list-group">
-					<li class="list-group-item">
-						<input type="radio" value="1" name="video" checked @click="selectedVideo"> video A
-					</li>
-					<li class="list-group-item">
-						<input type="radio" value="2" name="video" @click="selectedVideo"> video B
-					</li>
-					<li class="list-group-item">
-						<input type="radio" value="3" name="video" @click="selectedVideo"> video C
+					<li class="list-group-item" name="video" v-for="(video, index) in videos">
+						<input type="radio" v-bind:value=index+1 v-bind:checked="currentVideo==index+1" @click="selectedVideo"> {{ video.name }}
 					</li>
 				</ul>
 			</div>
