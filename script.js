@@ -22,11 +22,18 @@ $(document).ready(function () {
     el: '#app',
     data: data,
     methods: {
-      execVideo: function () {
+      playVideo: function () {
         var currentVideo = this.currentVideo;
 
-        $.get(`http://localhost:3000/send/${currentVideo}`, function (response) {
+        $.get(`http://localhost:3000/play/${currentVideo}`, function (response) {
           console.log(`Ejecutando video ${currentVideo}`);
+        });
+      },
+      stopVideo: function () {
+        var currentVideo = this.currentVideo;
+
+        $.get(`http://localhost:3000/stop`, function (response) {
+          console.log(`Video detenido`);
         });
       },
       selectedVideo: function (event) {
