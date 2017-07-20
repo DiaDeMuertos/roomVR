@@ -15,30 +15,62 @@ $(document).ready(function () {
         fileName: 'videoC.mpg4'
       },
     ],
-    currentVideo: 'videoA.mpg4',
+    apps: [
+      {
+        textName: 'app A',
+        fileName: 'appA.exe',
+      },
+      {
+        textName: 'app B',
+        fileName: 'appB.exe'
+      },
+      {
+        textName: 'app C',
+        fileName: 'appC.exe'
+      },
+    ],
+    currentContent: 'videoA.mpg4',
+    currentType: 'video',
   };
 
   new Vue({
     el: '#app',
     data: data,
     methods: {
-      playVideo: function () {
-        var currentVideo = this.currentVideo;
+      playContent: function () {
+        var currentContent = this.currentContent;
+        var currentType = this.currentType;
 
-        $.get(`http://localhost:3000/play/${currentVideo}`, function (response) {
-          console.log(`Ejecutando video ${currentVideo}`);
-        });
+        if (currentType === 'video') {
+          $.get(`http://localhost:3000/play-video/${currentContent}`, function (response) {
+            console.log(`Ejecutando video ${currentContent}`);
+          });
+        }
+        else {
+          $.get(`http://localhost:3000/play-app/${currentContent}`, function (response) {
+            console.log(`Ejecutando app ${currentContent}`);
+          });
+        }
       },
-      stopVideo: function () {
-        var currentVideo = this.currentVideo;
+      stopContent: function () {
+        var currentContent = this.currentContent;
+        var currentType = this.currentType;
 
-        $.get(`http://localhost:3000/stop`, function (response) {
-          console.log(`Video detenido`);
-        });
+        if (currentType === 'video') {
+          $.get(`http://localhost:3000/stop-video`, function (response) {
+            console.log(`Video detenido`);
+          });
+        } else {
+          $.get(`http://localhost:3000/stop-app`, function (response) {
+            console.log(`App detenida`);
+          });
+        }
       },
-      selectedVideo: function (event) {
-        this.currentVideo = event.target.value;
-        console.log(`Selecionado video ${this.currentVideo}`);
+      selectedContent: function (event) {
+        this.currentContent = event.target.value;
+        this.currentType = event.target.className;
+
+        console.log(`Selecionado ${this.currentType} ${this.currentContent}`);
       }
     },
   });

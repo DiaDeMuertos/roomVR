@@ -19,10 +19,22 @@
 		</div>
 
 		<div class="row">
+			<h3>Videos</h3>
 			<div class="col-lg-3">
 				 <ul class="list-group">
-					<li class="list-group-item" name="video" v-for="(video, index) in videos">
-						<input type="radio" v-bind:value=video.fileName v-bind:checked="currentVideo==video.fileName" @click="selectedVideo"> {{ video.textName }}
+					<li class="list-group-item" name="video" v-for="video in videos">
+						<input class="video" type="radio" v-bind:value=video.fileName v-bind:checked="currentContent==video.fileName" @click="selectedContent"> {{ video.textName }}
+					</li>
+				</ul> 
+			</div>
+		</div>
+
+		<div class="row">
+			<h3>App</h3>
+			<div class="col-lg-3">
+				 <ul class="list-group">
+					<li class="list-group-item" name="app" v-for="app in apps">
+						<input class="app" type="radio" v-bind:value=app.fileName v-bind:checked="currentContent==app.fileName" @click="selectedContent"> {{ app.textName }}
 					</li>
 				</ul> 
 			</div>
@@ -30,10 +42,10 @@
 
 		<div class="container">
 			<h2>
-				<button @click="playVideo" type="button" style="margin-right: 10px">
+				<button @click="playContent" type="button" style="margin-right: 10px">
 					<i class="glyphicon glyphicon-play" ></i>
 				</button>
-				<button @click="stopVideo" type="button">
+				<button @click="stopContent" type="button">
 					<i class="glyphicon glyphicon-stop"></i>
 				</button>
 			</h2>
